@@ -24,7 +24,7 @@ class RegistrationController extends Controller
             event(new Registered($user));
 
 
-            return response()->json(['status' => 'success','message' => 'Account Created Successfully check your mail to verify your account'], 200);
+            return response()->json(['status' => 'success','message' => 'Account Created Successfully'], 200);
         } else {
             return response()->json(['status' => 'error','message' => 'Error While creating Account'], 401);
 
