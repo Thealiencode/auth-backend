@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function login(LoginRequest $request){
-
-        if (auth()->attempt($request->validated)) {
+        if (auth()->attempt($request->validated())) {
             $token = auth()->user()->createToken('authToken')->plainTextToken;
             return response()->json([
                 'status'    => 'success',
